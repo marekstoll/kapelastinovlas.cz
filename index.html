@@ -5,203 +5,265 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>STÍNOVLAS</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   background:#050505;
   color:#fff;
-  font-family:Arial,sans-serif;
+  font-family:'Roboto Condensed', Arial, sans-serif;
   overflow-x:hidden;
 }
-a{text-decoration:none;color:inherit}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
 body:before{
   content:"";
   position:fixed;
   inset:0;
   background:
-    radial-gradient(circle at 20% 20%,rgba(255,255,255,.08),transparent 25%),
-    radial-gradient(circle at 80% 70%,rgba(255,0,0,.08),transparent 25%),
-    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px);
-  background-size:100% 100%,100% 100%,4px 4px;
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    radial-gradient(circle at 85% 65%, rgba(140,0,0,.28), transparent 30%),
+    #050505;
+  background-size:4px 4px, 100% 100%, 100% 100%;
   pointer-events:none;
   z-index:-1;
 }
 
 header{
-  height:82px;
+  width:100%;
+  height:78px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:0 55px;
-  background:#070707;
+  background:#050505;
   border-bottom:1px solid #222;
   position:sticky;
   top:0;
-  z-index:10;
+  z-index:50;
 }
 
-.logo-small{
-  font-family:'Anton',sans-serif;
-  font-size:34px;
+.header-logo{
+  font-family:'Anton', sans-serif;
+  font-size:32px;
   letter-spacing:2px;
+  text-transform:uppercase;
 }
 
 nav{
   display:flex;
-  gap:42px;
-  font-family:'Oswald',sans-serif;
+  gap:40px;
+  font-family:'Oswald', sans-serif;
   text-transform:uppercase;
   letter-spacing:1px;
   font-size:18px;
 }
 
-nav a:hover{color:#c91414}
+nav a:hover{
+  color:#d30000;
+}
 
 .social-top{
   display:flex;
   gap:20px;
-  font-family:'Anton',sans-serif;
+  font-family:'Anton', sans-serif;
   font-size:18px;
 }
 
 .hero{
   min-height:92vh;
-  display:grid;
-  grid-template-columns:1.25fr .75fr;
+  position:relative;
+  display:flex;
   align-items:center;
-  padding:70px 60px 90px;
+  justify-content:center;
+  padding:70px 40px;
   background:
-    linear-gradient(90deg,rgba(0,0,0,.15),rgba(0,0,0,.95)),
-    url("images/svatstinovlas siroky dva.jpg") center/cover no-repeat;
+    linear-gradient(90deg, rgba(0,0,0,.25), rgba(0,0,0,.92)),
+    url("images/svatstinovlas siroky dva.jpg") center center/cover no-repeat;
   border-bottom:1px solid #222;
 }
 
-.hero-logo{
-  grid-column:1/3;
+.hero-inner{
   width:100%;
-  max-width:1100px;
-  margin:0 auto 40px;
+  max-width:1250px;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:70px;
+  align-items:center;
+}
+
+.hero-logo{
+  width:100%;
+  max-width:760px;
   display:block;
+  background:#000;
+  padding:35px;
+  margin:auto;
 }
 
 .hero-text{
-  grid-column:2;
   max-width:430px;
 }
 
 h1,h2,h3,.btn{
-  font-family:'Anton',sans-serif;
+  font-family:'Anton', sans-serif;
   text-transform:uppercase;
   letter-spacing:2px;
 }
 
 .hero-text h1{
-  font-size:58px;
-  line-height:1.05;
+  font-size:56px;
+  line-height:1.12;
   margin-bottom:22px;
 }
 
 .red-line{
-  width:75px;
+  width:72px;
   height:5px;
-  background:#b90909;
-  margin:0 0 25px;
+  background:#d40000;
+  margin:0 0 24px;
 }
 
 .hero-text p{
   font-size:20px;
   line-height:1.7;
-  color:#ddd;
+  color:#eee;
 }
 
 .btn{
   display:inline-block;
-  margin-top:30px;
-  padding:15px 35px;
-  background:#b90909;
-  border:2px solid #8a0000;
+  margin-top:28px;
+  padding:15px 34px;
+  background:#d00000;
   color:#fff;
-  font-size:20px;
+  font-size:19px;
+  border:2px solid #8c0000;
 }
 
-.btn:hover{background:#e01616}
+.btn:hover{
+  background:#ff1111;
+}
 
 section{
-  max-width:1280px;
+  max-width:1180px;
   margin:auto;
-  padding:80px 55px;
+  padding:90px 40px;
 }
 
-.grid-3{
+.content-row{
+  border-bottom:1px solid #292929;
+  padding:75px 0;
   display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:0;
-  border-bottom:1px solid #222;
+  grid-template-columns:330px 1fr;
+  gap:70px;
+  align-items:start;
 }
 
-.panel{
-  padding:55px 45px;
-  border-right:1px solid #333;
-  min-height:360px;
+.content-row:first-child{
+  padding-top:20px;
 }
 
-.panel:last-child{border-right:none}
-
-h2{
+.content-row h2{
   font-size:54px;
-  margin-bottom:18px;
+  line-height:1.08;
 }
 
-p{
-  font-size:18px;
-  line-height:1.7;
+.content-row p{
+  font-size:20px;
+  line-height:1.75;
   color:#ddd;
+  max-width:620px;
+}
+
+.video-wrap{
+  margin-top:35px;
+  max-width:850px;
+}
+
+.video-wrap iframe{
+  width:100%;
+  aspect-ratio:16/9;
+  border:0;
+  display:block;
+}
+
+.concert-list{
+  max-width:650px;
 }
 
 .concert-row{
   display:grid;
   grid-template-columns:110px 1fr 80px;
-  gap:15px;
-  padding:14px 0;
-  border-bottom:1px solid #272727;
-  font-size:17px;
+  gap:20px;
+  padding:18px 0;
+  border-bottom:1px solid #282828;
+  font-size:20px;
 }
 
-.date{color:#e01818;font-weight:bold}
+.date{
+  color:#e00000;
+  font-weight:700;
+}
+
+.gallery-section{
+  max-width:1220px;
+  margin:auto;
+  padding:90px 40px 110px;
+}
+
+.gallery-section h2{
+  font-size:58px;
+  margin-bottom:18px;
+}
 
 .gallery-grid{
+  margin-top:35px;
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-  margin-top:30px;
+  grid-template-columns:repeat(4, minmax(180px, 1fr));
+  gap:22px;
+  justify-items:center;
+  align-items:center;
 }
 
 .gallery-grid img{
   width:100%;
-  height:210px;
+  height:230px;
   object-fit:cover;
+  object-position:center;
   border:2px solid #333;
-  filter:grayscale(25%) contrast(1.1);
+  background:#000;
+  filter:contrast(1.08) saturate(.95);
 }
 
 footer{
   border-top:1px solid #222;
-  padding:65px 55px 30px;
-  max-width:1280px;
+  max-width:1180px;
   margin:auto;
+  padding:70px 40px 30px;
   display:grid;
   grid-template-columns:1.2fr 1fr 1fr 1fr;
   gap:45px;
 }
 
 .footer-logo{
-  font-family:'Anton',sans-serif;
+  font-family:'Anton', sans-serif;
   font-size:44px;
   letter-spacing:2px;
+  text-transform:uppercase;
 }
 
 footer h3{
@@ -209,8 +271,10 @@ footer h3{
   margin-bottom:18px;
 }
 
-footer p, footer a{
+footer p,
+footer a{
   display:block;
+  font-size:17px;
   color:#ccc;
   margin-bottom:10px;
 }
@@ -225,34 +289,95 @@ footer p, footer a{
 }
 
 @media(max-width:900px){
-  header{padding:20px;height:auto;display:block;text-align:center}
-  nav{justify-content:center;flex-wrap:wrap;gap:18px;margin:20px 0}
-  .social-top{justify-content:center}
-  .hero{display:block;padding:45px 20px}
-  .hero-logo{margin-top:20px}
-  .hero-text{max-width:none}
-  .hero-text h1{font-size:42px}
-  .grid-3{grid-template-columns:1fr}
-  .panel{border-right:none;border-bottom:1px solid #333;padding:45px 20px}
-  section{padding:60px 20px}
-  .gallery-grid{grid-template-columns:1fr 1fr}
-  footer{grid-template-columns:1fr;padding:50px 20px}
-  .copy{grid-column:1}
+
+  header{
+    height:auto;
+    display:block;
+    text-align:center;
+    padding:22px;
+  }
+
+  nav{
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+    margin:20px 0;
+  }
+
+  .social-top{
+    justify-content:center;
+  }
+
+  .hero{
+    padding:50px 22px;
+  }
+
+  .hero-inner{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .hero-logo{
+    padding:18px;
+  }
+
+  .hero-text h1{
+    font-size:42px;
+  }
+
+  section{
+    padding:65px 22px;
+  }
+
+  .content-row{
+    grid-template-columns:1fr;
+    gap:25px;
+    padding:60px 0;
+  }
+
+  .content-row h2{
+    font-size:42px;
+  }
+
+  .gallery-section{
+    padding:65px 22px;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .gallery-grid img{
+    height:190px;
+  }
+
+  footer{
+    grid-template-columns:1fr;
+    padding:55px 22px 25px;
+  }
+
+  .copy{
+    grid-column:1;
+  }
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo-small">STÍNOVLAS</div>
+  <div class="header-logo">STÍNOVLAS</div>
+
   <nav>
     <a href="#uvod">Úvod</a>
     <a href="#kapela">O kapele</a>
+    <a href="#hudba">Hudbou to začíná</a>
     <a href="#koncerty">Koncerty</a>
     <a href="#galerie">Galerie</a>
     <a href="#kontakt">Kontakt</a>
   </nav>
+
   <div class="social-top">
     <a href="#">FB</a>
     <a href="#">IG</a>
@@ -261,59 +386,95 @@ footer p, footer a{
 </header>
 
 <main id="uvod" class="hero">
-  <img class="hero-logo" src="images/ořízlý text.png" alt="STÍNOVLAS">
+  <div class="hero-inner">
 
-  <div class="hero-text">
-    <h1>Rock z hlubin stínů</h1>
-    <div class="red-line"></div>
-    <p>Tvrdé kytary, syrové texty a energie, která tě smete. STÍNOVLAS hraje rock naplno a bez kompromisů.</p>
-    <a class="btn" href="#galerie">Poslouchat</a>
+    <img class="hero-logo" src="images/STÍNOVLAS velký.png" alt="STÍNOVLAS">
+
+    <div class="hero-text">
+      <h1>Rock z hlubin stínů</h1>
+      <div class="red-line"></div>
+      <p>
+        Tvrdé kytary, syrové texty a energie, která tě smete.
+        STÍNOVLAS hraje rock naplno a bez kompromisů.
+      </p>
+      <a class="btn" href="#hudba">Poslouchat</a>
+    </div>
+
   </div>
 </main>
 
-<section class="grid-3">
+<section>
 
-  <div class="panel" id="kapela">
-    <h2>O kapele</h2>
-    <div class="red-line"></div>
-    <p>STÍNOVLAS je český rockový projekt. V naší tvorbě najdete prvky popu, punku i metalu. Hlavní myšlenkou je skládat od srdce a bavit naše posluchače.</p>
-  </div>
-
-  <div class="panel" id="koncerty">
-    <h2>Koncerty</h2>
-    <div class="red-line"></div>
-
-    <div class="concert-row">
-      <div class="date">2026</div>
-      <div>Kompletní seznam již brzy</div>
-      <div>INFO</div>
+  <div class="content-row" id="kapela">
+    <div>
+      <h2>O kapele</h2>
+      <div class="red-line"></div>
     </div>
 
-    <a class="btn" href="#kontakt">Booking</a>
+    <div>
+      <p>
+        STÍNOVLAS je český rockový projekt. V naší tvorbě najdete prvky popu,
+        punku i metalu. Hlavní myšlenkou je skládat od srdce a bavit naše posluchače.
+      </p>
+    </div>
   </div>
 
-  <div class="panel">
-    <h2>Hudbou to začíná</h2>
-    <div class="red-line"></div>
-    <p>Stojíme za projektem NÁŘEZÁKFEST.COM. Smyslem festivalu je dát prostor autorským i zábavovým kapelám a užít si jedinečnou atmosféru.</p>
-    <a class="btn" href="#">Festival</a>
+  <div class="content-row" id="hudba">
+    <div>
+      <h2>Hudbou to začíná</h2>
+      <div class="red-line"></div>
+    </div>
+
+    <div>
+      <p>
+        Stojíme za projektem NÁŘEZÁKFEST.COM. Smyslem festivalu je dát prostor
+        autorským i zábavovým kapelám a užít si jedinečnou atmosféru.
+      </p>
+
+      <a class="btn" href="https://www.narezakfest.com" target="_blank">Festival</a>
+
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/QqBvuIiqPLo"
+          title="NÁŘEZÁK FEST"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-row" id="koncerty">
+    <div>
+      <h2>Koncerty</h2>
+      <div class="red-line"></div>
+    </div>
+
+    <div class="concert-list">
+      <div class="concert-row">
+        <div class="date">2026</div>
+        <div>Kompletní seznam již brzy</div>
+        <div>INFO</div>
+      </div>
+
+      <a class="btn" href="#kontakt">Booking</a>
+    </div>
   </div>
 
 </section>
 
-<section id="galerie">
+<section class="gallery-section" id="galerie">
   <h2>Galerie</h2>
   <div class="red-line"></div>
 
   <div class="gallery-grid">
     <img src="images/stinovlas duo.jpg" alt="">
-    <img src="images/stinovlas dva.png" alt="">
     <img src="images/stinovlas ja 2.jpg" alt="">
-    <img src="images/stinovlas ja.jpg" alt="">
-    <img src="images/stinovlas siroky.jpg" alt="">
     <img src="images/stinovlas tri.JPG" alt="">
     <img src="images/tinovlas jedna.png" alt="">
-    <img src="images/STÍNOVLAS velký.png" alt="">
+    <img src="images/stinovlas siroky.jpg" alt="">
+    <img src="images/IMG_5065.jpg" alt="">
+    <img src="images/stinovlas ja.jpg" alt="">
+    <img src="images/svatstinovlas siroky dva.jpg" alt="">
   </div>
 </section>
 
@@ -328,6 +489,7 @@ footer p, footer a{
     <h3>Menu</h3>
     <a href="#uvod">Úvod</a>
     <a href="#kapela">O kapele</a>
+    <a href="#hudba">Hudbou to začíná</a>
     <a href="#koncerty">Koncerty</a>
     <a href="#galerie">Galerie</a>
   </div>
@@ -345,7 +507,9 @@ footer p, footer a{
     <a href="#">YouTube</a>
   </div>
 
-  <div class="copy">© 2026 STÍNOVLAS</div>
+  <div class="copy">
+    © 2026 STÍNOVLAS
+  </div>
 
 </footer>
 
