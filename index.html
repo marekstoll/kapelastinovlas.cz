@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STÍNOVLAS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#000;
+color:white;
+font-family:'Montserrat',sans-serif;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+color:white;
+}
+
+.hero{
+height:100vh;
+background:url('images/hero.jpg') center center/cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.65);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+text-align:center;
+}
+
+.hero h1{
+font-family:'Anton',sans-serif;
+font-size:clamp(80px,15vw,220px);
+letter-spacing:6px;
+line-height:0.9;
+text-shadow:0 0 25px rgba(255,255,255,0.15);
+}
+
+.hero p{
+margin-top:20px;
+font-size:22px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:#d6d6d6;
+}
+
+section{
+width:100%;
+max-width:1300px;
+margin:auto;
+padding:120px 40px;
+}
+
+h2{
+font-family:'Anton',sans-serif;
+font-size:60px;
+margin-bottom:35px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:80px;
+align-items:center;
+}
+
+.about-text p{
+font-size:18px;
+line-height:1.9;
+color:#d0d0d0;
+max-width:550px;
+}
+
+.about-image img{
+width:100%;
+border:5px solid white;
+display:block;
+}
+
+.gallery-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:22px;
+}
+
+.gallery img{
+width:100%;
+height:320px;
+object-fit:cover;
+border:5px solid white;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.04);
+opacity:0.8;
+}
+
+.socials{
+display:flex;
+justify-content:center;
+gap:90px;
+margin-top:70px;
+font-size:42px;
+font-weight:bold;
+}
+
+.split{
+display:grid;
+grid-template-columns:1fr 1.2fr;
+gap:90px;
+align-items:center;
+}
+
+.button{
+display:inline-block;
+margin-top:35px;
+background:#f1c232;
+padding:16px 34px;
+font-weight:bold;
+color:black;
+text-transform:uppercase;
+letter-spacing:2px;
+}
+
+.video iframe{
+width:100%;
+height:450px;
+border:none;
+}
+
+.koncerty{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:80px;
+align-items:center;
+}
+
+.koncerty img{
+width:100%;
+}
+
+.footer{
+padding:120px 40px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:90px;
+align-items:center;
+}
+
+.footer-logo img{
+width:100%;
+border:5px solid white;
+}
+
+.contact p{
+margin-bottom:18px;
+font-size:20px;
+}
+
+.contact strong{
+color:white;
+}
+
+@media(max-width:900px){
+
+.hero{
+height:80vh;
+}
+
+.about,
+.split,
+.koncerty,
+.footer{
+grid-template-columns:1fr;
+}
+
+.gallery{
+grid-template-columns:repeat(2,1fr);
+}
+
+.gallery img{
+height:220px;
+}
+
+.socials{
+gap:35px;
+font-size:28px;
+}
+
+h2{
+font-size:42px;
+}
+
+section{
+padding:80px 20px;
+}
+
+.video iframe{
+height:250px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+<div class="hero-content">
+<h1>STÍNOVLAS</h1>
+<p>Česká rocková kapela</p>
+</div>
+</section>
+
+<section class="about">
+
+<div class="about-text">
+<h2>O kapele</h2>
+
+<p>
+STÍNOVLAS je český rockový projekt.
+V naší tvorbě najdete prvky popu, punku i metalu.
+Hlavní myšlenkou je skládat hudbu od srdce a bavit naše posluchače.
+</p>
+
+</div>
+
+<div class="about-image">
+<img src="images/kapela.jpg">
+</div>
+
+</section>
+
+<section>
+
+<div class="gallery-title">
+<h2>Galerie</h2>
+</div>
+
+<div class="gallery">
+
+<img src="images/foto1.jpg">
+<img src="images/foto2.jpg">
+<img src="images/foto3.jpg">
+<img src="images/foto4.jpg">
+<img src="images/foto5.jpg">
+<img src="images/foto6.jpg">
+
+</div>
+
+<div class="socials">
+
+<a href="#">INSTAGRAM</a>
+<a href="#">FACEBOOK</a>
+<a href="#">YOUTUBE</a>
+
+</div>
+
+</section>
+
+<section class="split">
+
+<div>
+
+<h2>Hudbou to začíná</h2>
+
+<p style="line-height:1.9;color:#d0d0d0;">
+Stojíme za projektem NÁŘEZÁKFEST.COM.
+Smyslem festivalu je dát prostor autorským i zábavovým kapelám
+a užít si jedinečnou atmosféru.
+</p>
+
+<a class="button" href="#">
+Festival Nářezák
+</a>
+
+</div>
+
+<div class="video">
+
+<iframe src="https://www.youtube.com/embed/YOUTUBEVIDEO"></iframe>
+
+</div>
+
+</section>
+
+<section class="koncerty">
+
+<div>
+
+<h2>Koncerty</h2>
+
+<p style="font-size:22px;color:#d0d0d0;">
+Kompletní seznam již brzy.
+</p>
+
+</div>
+
+<div>
+
+<img src="images/live.jpg">
+
+</div>
+
+</section>
+
+<section class="footer">
+
+<div class="footer-logo">
+
+<img src="images/logo.jpg">
+
+</div>
+
+<div class="contact">
+
+<h2>Kontakt</h2>
+
+<p><strong>E:</strong> info@kapelastinovlas.cz</p>
+<p><strong>IČ:</strong> 08373043</p>
+
+<br>
+
+<p>
+<a href="#">Facebook</a><br><br>
+<a href="#">Instagram</a><br><br>
+<a href="#">YouTube</a>
+</p>
+
+</div>
+
+</section>
+
+</body>
+</html>
