@@ -10,12 +10,14 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+
 body{
   background:#050505;
   color:#fff;
   font-family:'Roboto Condensed',Arial,sans-serif;
   overflow-x:hidden;
 }
+
 a{text-decoration:none;color:inherit}
 
 body:before{
@@ -24,7 +26,7 @@ body:before{
   inset:0;
   background:
     linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-    radial-gradient(circle at 90% 60%,rgba(160,0,0,.25),transparent 34%),
+    radial-gradient(circle at 90% 60%,rgba(160,0,0,.23),transparent 34%),
     #050505;
   background-size:4px 4px,100% 100%,100% 100%;
   pointer-events:none;
@@ -73,31 +75,40 @@ nav a:hover{color:#d40000}
   width:30px;
   height:30px;
   object-fit:contain;
-  filter:brightness(1.1);
 }
 
+/* ÚVOD */
 .hero{
-  min-height:86vh;
+  min-height:88vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:70px 30px;
+  padding:70px 0 80px;
   background:#000;
   border-bottom:1px solid #222;
   text-align:center;
 }
 
 .hero-inner{
-  max-width:1180px;
   width:100%;
+  max-width:none;
 }
 
 .hero-logo{
-  width:min(94vw,1120px);
-  max-height:520px;
+  width:100vw;
+  max-width:100%;
+  max-height:560px;
   object-fit:contain;
   display:block;
-  margin:0 auto 45px;
+  margin:0 auto;
+}
+
+.hero-text{
+  max-width:760px;
+  margin:-45px auto 0;
+  padding:0 25px;
+  position:relative;
+  z-index:2;
 }
 
 h1,h2,h3,.btn{
@@ -107,8 +118,8 @@ h1,h2,h3,.btn{
 }
 
 .hero-text h1{
-  font-size:clamp(42px,6vw,78px);
-  line-height:1.18;
+  font-size:clamp(42px,6vw,76px);
+  line-height:1.22;
   margin-bottom:20px;
 }
 
@@ -139,6 +150,7 @@ h1,h2,h3,.btn{
 
 .btn:hover{background:#ff1515}
 
+/* OBSAH */
 section{
   max-width:1180px;
   margin:auto;
@@ -154,7 +166,7 @@ section{
 
 .content-block h2{
   font-size:clamp(42px,5vw,62px);
-  line-height:1.18;
+  line-height:1.22;
   margin-bottom:18px;
 }
 
@@ -195,6 +207,7 @@ section{
 
 .date{color:#e00000;font-weight:700}
 
+/* GALERIE */
 .gallery-section{
   max-width:1220px;
   margin:auto;
@@ -221,8 +234,8 @@ section{
 }
 
 .gallery-socials img{
-  width:38px;
-  height:38px;
+  width:40px;
+  height:40px;
 }
 
 .gallery-line{
@@ -315,16 +328,20 @@ footer a:hover{color:#d40000}
   .social-top{justify-content:center}
 
   .hero{
-    min-height:78vh;
-    padding:50px 18px;
+    min-height:72vh;
+    padding:45px 0 65px;
   }
 
   .hero-logo{
-    width:96vw;
-    max-height:320px;
+    width:100vw;
+    max-height:360px;
   }
 
-  .hero-text h1{font-size:42px}
+  .hero-text{
+    margin:-20px auto 0;
+  }
+
+  .hero-text h1{font-size:40px}
   .hero-text p{font-size:19px}
 
   section{padding:60px 22px}
@@ -470,9 +487,9 @@ footer a:hover{color:#d40000}
     <img src="images/stinovlas tri.JPG" alt="">
     <img src="images/tinovlas jedna.png" alt="">
     <img src="images/stinovlas siroky.jpg" alt="">
-    <img src="images/IMG_5065.jpg" alt="">
+    <img src="images/IMG_5065.JPG" alt="">
     <img src="images/svatstinovlas siroky dva.jpg" alt="">
-    <img src="images/IMG_7737.jpg" alt="">
+    <img src="images/IMG_7737.JPG" alt="">
   </div>
 </section>
 
