@@ -6,40 +6,27 @@
 <title>STÍNOVLAS</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   background:#050505;
   color:#fff;
-  font-family:'Roboto Condensed', Arial, sans-serif;
+  font-family:'Roboto Condensed',Arial,sans-serif;
   overflow-x:hidden;
 }
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
+a{text-decoration:none;color:inherit}
 
 body:before{
   content:"";
   position:fixed;
   inset:0;
   background:
-    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-    radial-gradient(circle at 88% 62%, rgba(150,0,0,.22), transparent 35%),
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    radial-gradient(circle at 90% 60%,rgba(160,0,0,.25),transparent 34%),
     #050505;
-  background-size:4px 4px, 100% 100%, 100% 100%;
+  background-size:4px 4px,100% 100%,100% 100%;
   pointer-events:none;
   z-index:-1;
 }
@@ -50,7 +37,7 @@ header{
   align-items:center;
   justify-content:space-between;
   padding:0 56px;
-  background:rgba(5,5,5,.96);
+  background:#050505;
   border-bottom:1px solid #242424;
   position:sticky;
   top:0;
@@ -58,96 +45,86 @@ header{
 }
 
 .header-logo{
-  font-family:'Anton', sans-serif;
+  font-family:'Anton',sans-serif;
   font-size:32px;
   letter-spacing:2px;
-  text-transform:uppercase;
 }
 
 nav{
   display:flex;
   gap:38px;
-  font-family:'Oswald', sans-serif;
+  font-family:'Oswald',sans-serif;
   text-transform:uppercase;
-  letter-spacing:1px;
   font-size:18px;
+  letter-spacing:1px;
 }
 
-nav a:hover{
-  color:#d40000;
-}
+nav a:hover{color:#d40000}
 
 .social-top{
   display:flex;
-  gap:22px;
-  font-size:22px;
+  gap:18px;
+  align-items:center;
 }
 
-.social-top a:hover{
-  color:#d40000;
+.social-top img,
+.gallery-socials img,
+.footer-socials img{
+  width:30px;
+  height:30px;
+  object-fit:contain;
+  filter:brightness(1.1);
 }
 
 .hero{
-  min-height:94vh;
-  position:relative;
+  min-height:86vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:70px 40px 90px;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.40), rgba(0,0,0,.78)),
-    url("images/svatstinovlas siroky dva.jpg") center center/cover no-repeat;
+  padding:70px 30px;
+  background:#000;
   border-bottom:1px solid #222;
-}
-
-.hero-inner{
-  width:100%;
-  max-width:1260px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
   text-align:center;
 }
 
-.hero-logo{
-  width:min(92vw,1050px);
-  max-height:360px;
-  object-fit:contain;
-  display:block;
-  margin:0 auto 42px;
+.hero-inner{
+  max-width:1180px;
+  width:100%;
 }
 
-.hero-text{
-  max-width:760px;
-  margin:0 auto;
+.hero-logo{
+  width:min(94vw,1120px);
+  max-height:520px;
+  object-fit:contain;
+  display:block;
+  margin:0 auto 45px;
 }
 
 h1,h2,h3,.btn{
-  font-family:'Anton', sans-serif;
+  font-family:'Anton',sans-serif;
   text-transform:uppercase;
   letter-spacing:2px;
 }
 
 .hero-text h1{
-  font-size:clamp(46px,7vw,86px);
+  font-size:clamp(42px,6vw,78px);
   line-height:1.18;
-  margin-bottom:22px;
-  text-shadow:0 3px 18px rgba(0,0,0,.7);
+  margin-bottom:20px;
 }
 
 .red-line{
   width:82px;
   height:5px;
   background:#d40000;
-  margin:0 auto 26px;
+  margin:0 auto 25px;
 }
 
 .hero-text p{
+  max-width:760px;
+  margin:auto;
   font-size:22px;
-  line-height:1.75;
-  color:#f2f2f2;
-  text-shadow:0 2px 12px rgba(0,0,0,.8);
+  line-height:1.7;
+  color:#eee;
 }
 
 .btn{
@@ -160,9 +137,7 @@ h1,h2,h3,.btn{
   border:2px solid #8c0000;
 }
 
-.btn:hover{
-  background:#ff1515;
-}
+.btn:hover{background:#ff1515}
 
 section{
   max-width:1180px;
@@ -173,12 +148,9 @@ section{
 .content-block{
   border-bottom:1px solid #2a2a2a;
   padding:70px 0;
-  text-align:left;
 }
 
-.content-block:first-child{
-  padding-top:10px;
-}
+.content-block:first-child{padding-top:10px}
 
 .content-block h2{
   font-size:clamp(42px,5vw,62px);
@@ -191,7 +163,7 @@ section{
 }
 
 .content-block p{
-  max-width:760px;
+  max-width:780px;
   font-size:21px;
   line-height:1.8;
   color:#ddd;
@@ -211,10 +183,6 @@ section{
   background:#000;
 }
 
-.concert-list{
-  max-width:760px;
-}
-
 .concert-row{
   display:grid;
   grid-template-columns:120px 1fr 90px;
@@ -222,12 +190,10 @@ section{
   padding:18px 0;
   border-bottom:1px solid #282828;
   font-size:21px;
+  max-width:760px;
 }
 
-.date{
-  color:#e00000;
-  font-weight:700;
-}
+.date{color:#e00000;font-weight:700}
 
 .gallery-section{
   max-width:1220px;
@@ -235,19 +201,40 @@ section{
   padding:88px 40px 115px;
 }
 
+.gallery-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+  margin-bottom:34px;
+}
+
 .gallery-section h2{
   font-size:clamp(46px,5vw,64px);
   line-height:1.18;
-  margin-bottom:18px;
 }
 
-.gallery-section .red-line{
-  margin:0 0 34px;
+.gallery-socials{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+
+.gallery-socials img{
+  width:38px;
+  height:38px;
+}
+
+.gallery-line{
+  width:82px;
+  height:5px;
+  background:#d40000;
+  margin-bottom:38px;
 }
 
 .gallery-grid{
   display:grid;
-  grid-template-columns:repeat(4, minmax(200px, 1fr));
+  grid-template-columns:repeat(4,minmax(200px,1fr));
   gap:22px;
   justify-content:center;
   align-items:center;
@@ -260,13 +247,7 @@ section{
   object-position:center;
   border:2px solid #333;
   background:#000;
-  filter:contrast(1.05) saturate(1.02);
   display:block;
-}
-
-.gallery-grid img:hover{
-  transform:scale(1.025);
-  transition:.25s;
 }
 
 footer{
@@ -280,10 +261,9 @@ footer{
 }
 
 .footer-logo{
-  font-family:'Anton', sans-serif;
+  font-family:'Anton',sans-serif;
   font-size:44px;
   letter-spacing:2px;
-  text-transform:uppercase;
 }
 
 footer h3{
@@ -292,23 +272,19 @@ footer h3{
   margin-bottom:18px;
 }
 
-footer p,
-footer a{
+footer p,footer a{
   display:block;
   font-size:18px;
   color:#ccc;
   margin-bottom:10px;
 }
 
-footer a:hover{
-  color:#d40000;
-}
+footer a:hover{color:#d40000}
 
 .footer-socials{
   display:flex;
-  gap:22px;
+  gap:18px;
   margin-top:18px;
-  font-size:30px;
 }
 
 .copy{
@@ -321,7 +297,6 @@ footer a:hover{
 }
 
 @media(max-width:900px){
-
   header{
     height:auto;
     display:block;
@@ -337,49 +312,38 @@ footer a:hover{
     font-size:16px;
   }
 
-  .social-top{
-    justify-content:center;
-  }
+  .social-top{justify-content:center}
 
   .hero{
-    min-height:86vh;
-    padding:48px 20px 70px;
+    min-height:78vh;
+    padding:50px 18px;
   }
 
   .hero-logo{
     width:96vw;
-    max-height:250px;
-    margin-bottom:34px;
+    max-height:320px;
   }
 
-  .hero-text h1{
-    font-size:44px;
-    line-height:1.22;
-  }
+  .hero-text h1{font-size:42px}
+  .hero-text p{font-size:19px}
 
-  .hero-text p{
-    font-size:19px;
-  }
-
-  section{
-    padding:60px 22px;
-  }
-
-  .content-block{
-    padding:58px 0;
-  }
-
-  .content-block p{
-    font-size:19px;
-  }
+  section{padding:60px 22px}
+  .content-block{padding:58px 0}
+  .content-block p{font-size:19px}
 
   .concert-row{
     grid-template-columns:1fr;
     gap:6px;
   }
 
-  .gallery-section{
-    padding:62px 22px 80px;
+  .gallery-section{padding:62px 22px 80px}
+
+  .gallery-head{
+    display:block;
+  }
+
+  .gallery-socials{
+    margin-top:20px;
   }
 
   .gallery-grid{
@@ -387,18 +351,14 @@ footer a:hover{
     gap:16px;
   }
 
-  .gallery-grid img{
-    height:190px;
-  }
+  .gallery-grid img{height:190px}
 
   footer{
     grid-template-columns:1fr;
     padding:55px 22px 25px;
   }
 
-  .copy{
-    grid-column:1;
-  }
+  .copy{grid-column:1}
 }
 </style>
 </head>
@@ -418,9 +378,10 @@ footer a:hover{
   </nav>
 
   <div class="social-top">
-    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://www.youtube.com/@Kapela_Stinovlas" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    <a href="#"><img src="images/fb.png" alt="Facebook"></a>
+    <a href="#"><img src="images/ig.png" alt="Instagram"></a>
+    <a href="https://www.youtube.com/@Kapela_Stinovlas" target="_blank"><img src="images/youtube.png" alt="YouTube"></a>
+    <a href="#"><img src="images/spotify.png" alt="Spotify"></a>
   </div>
 </header>
 
@@ -477,12 +438,10 @@ footer a:hover{
     <h2>Koncerty</h2>
     <div class="red-line"></div>
 
-    <div class="concert-list">
-      <div class="concert-row">
-        <div class="date">2026</div>
-        <div>Kompletní seznam již brzy</div>
-        <div>INFO</div>
-      </div>
+    <div class="concert-row">
+      <div class="date">2026</div>
+      <div>Kompletní seznam již brzy</div>
+      <div>INFO</div>
     </div>
 
     <a class="btn" href="#kontakt">Booking</a>
@@ -491,8 +450,19 @@ footer a:hover{
 </section>
 
 <section class="gallery-section" id="galerie">
-  <h2>Galerie</h2>
-  <div class="red-line"></div>
+
+  <div class="gallery-head">
+    <h2>Galerie</h2>
+
+    <div class="gallery-socials">
+      <a href="#"><img src="images/fb.png" alt="Facebook"></a>
+      <a href="#"><img src="images/ig.png" alt="Instagram"></a>
+      <a href="https://www.youtube.com/@Kapela_Stinovlas" target="_blank"><img src="images/youtube.png" alt="YouTube"></a>
+      <a href="#"><img src="images/spotify.png" alt="Spotify"></a>
+    </div>
+  </div>
+
+  <div class="gallery-line"></div>
 
   <div class="gallery-grid">
     <img src="images/stinovlas duo.jpg" alt="">
@@ -501,8 +471,8 @@ footer a:hover{
     <img src="images/tinovlas jedna.png" alt="">
     <img src="images/stinovlas siroky.jpg" alt="">
     <img src="images/IMG_5065.jpg" alt="">
-    <img src="images/stinovlas ja.jpg" alt="">
     <img src="images/svatstinovlas siroky dva.jpg" alt="">
+    <img src="images/IMG_7737.jpg" alt="">
   </div>
 </section>
 
@@ -513,9 +483,10 @@ footer a:hover{
     <p>Česká rocková kapela</p>
 
     <div class="footer-socials">
-      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.youtube.com/@Kapela_Stinovlas" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <a href="#"><img src="images/fb.png" alt="Facebook"></a>
+      <a href="#"><img src="images/ig.png" alt="Instagram"></a>
+      <a href="https://www.youtube.com/@Kapela_Stinovlas" target="_blank"><img src="images/youtube.png" alt="YouTube"></a>
+      <a href="#"><img src="images/spotify.png" alt="Spotify"></a>
     </div>
   </div>
 
@@ -539,6 +510,7 @@ footer a:hover{
     <a href="#">Facebook</a>
     <a href="#">Instagram</a>
     <a href="https://www.youtube.com/@Kapela_Stinovlas" target="_blank">YouTube</a>
+    <a href="#">Spotify</a>
   </div>
 
   <div class="copy">
