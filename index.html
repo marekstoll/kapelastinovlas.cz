@@ -181,10 +181,22 @@ section{
   color:#ddd;
 }
 
-.video-wrap{
+.hudba-layout{
+  display:grid;
+  grid-template-columns:1.35fr .9fr;
+  gap:44px;
+  align-items:center;
   margin-top:38px;
+}
+
+.hudba-text p{
+  max-width:420px;
+}
+
+.video-wrap{
+  margin-top:0;
   width:100%;
-  max-width:900px;
+  max-width:none;
 }
 
 .video-wrap iframe{
@@ -193,6 +205,17 @@ section{
   border:0;
   display:block;
   background:#000;
+}
+
+@media(max-width:900px){
+  .hudba-layout{
+    grid-template-columns:1fr;
+    gap:26px;
+  }
+
+  .hudba-text p{
+    max-width:100%;
+  }
 }
 
 .concert-row{
@@ -433,15 +456,10 @@ footer a:hover{color:#d40000}
   </div>
 
   <div class="content-block" id="hudba">
-    <h2>Hudbou to začíná</h2>
-    <div class="red-line"></div>
-    <p>
-      Stojíme za projektem NÁŘEZÁKFEST.COM. Smyslem festivalu je dát prostor
-      autorským i zábavovým kapelám a užít si jedinečnou atmosféru.
-    </p>
+  <h2>Hudbou to začíná</h2>
+  <div class="red-line"></div>
 
-    <a class="btn" href="https://www.narezakfest.com" target="_blank">Festival</a>
-
+  <div class="hudba-layout">
     <div class="video-wrap">
       <iframe
         src="https://www.youtube.com/embed/QqBvuIiqPLo"
@@ -450,8 +468,17 @@ footer a:hover{color:#d40000}
         allowfullscreen>
       </iframe>
     </div>
-  </div>
 
+    <div class="hudba-text">
+      <p>
+        Stojíme za projektem NÁŘEZÁKFEST.COM. Smyslem festivalu je dát prostor
+        autorským i zábavovým kapelám a užít si jedinečnou atmosféru.
+      </p>
+
+      <a class="btn" href="https://www.narezakfest.com" target="_blank">Festival</a>
+    </div>
+  </div>
+</div>
   <div class="content-block" id="koncerty">
     <h2>Koncerty</h2>
     <div class="red-line"></div>
