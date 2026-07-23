@@ -850,9 +850,16 @@ footer a:hover{color:#d40000}
     }
   });
 
-  cookieDetailsBtn.addEventListener('click', () => {
-    cookieSettings.classList.toggle('is-open');
-  });
+ cookieDetailsBtn.addEventListener('click', () => {
+  cookieSettings.classList.toggle('is-open');
+
+  if(cookieSettings.classList.contains('is-open')){
+    cookieSettings.scrollIntoView({
+      behavior:'smooth',
+      block:'start'
+    });
+  }
+});
 
   cookieAcceptAll.addEventListener('click', () => {
     analyticsCookies.checked = true;
