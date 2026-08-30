@@ -115,7 +115,23 @@ nav a:hover{color:#d40000}
   max-height:600px;
   object-fit:contain;
   display:block;
-  margin:-40px auto 0;;
+  margin:-40px auto 0;
+  position:relative;
+  z-index:2;
+  mix-blend-mode:screen;
+  filter:drop-shadow(0 0 22px rgba(0,0,0,.9));
+}
+
+.hero-inner::before{
+  content:"";
+  position:absolute;
+  inset:5% 12% 3%;
+  background:radial-gradient(ellipse at center,
+    rgba(0,0,0,.70) 0%,
+    rgba(0,0,0,.48) 42%,
+    rgba(0,0,0,0) 75%);
+  z-index:1;
+  pointer-events:none;
 }
 
 .hero-text{
