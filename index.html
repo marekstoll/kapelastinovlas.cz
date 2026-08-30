@@ -307,31 +307,34 @@ section{
   display:flex;
   gap:18px;
   overflow-x:auto;
-  scroll-snap-type:x mandatory;
+  scroll-snap-type:x proximity;
   scroll-behavior:smooth;
-  padding:8px 0 18px;
+  padding:10px 2px 22px;
   -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
 }
 
 .gallery-grid::-webkit-scrollbar{
-  height:8px;
+  display:none;
 }
 
 .gallery-grid img{
-  flex:0 0 260px;
-  width:260px;
-  height:190px;
-  object-fit:cover;
-  border:2px solid #333;
-  background:#000;
+  flex:0 0 230px;
+  width:230px;
+  height:300px;
+  object-fit:contain;
+  object-position:center;
+  border:1px solid #333;
+  border-radius:18px;
+  background:#050505;
   display:block;
   cursor:pointer;
-  scroll-snap-align:center;
+  scroll-snap-align:start;
   transition:transform .2s ease;
 }
 
 .gallery-grid img:hover{
-  transform:scale(1.03);
+  transform:scale(1.025);
 }
 
 footer{
