@@ -336,6 +336,43 @@ section{
 .gallery-grid img:hover{
   transform:scale(1.025);
 }
+  .gallery-carousel{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.gallery-carousel .gallery-grid{
+  flex:1;
+  min-width:0;
+}
+
+.gallery-prev,
+.gallery-next{
+  flex:0 0 50px;
+  width:50px;
+  height:70px;
+  border:0;
+  border-radius:10px;
+  background:rgba(0,0,0,.65);
+  color:#fff;
+  font-size:38px;
+  cursor:pointer;
+  z-index:3;
+}
+
+.gallery-prev:hover,
+.gallery-next:hover{
+  background:#d00000;
+}
+
+@media(max-width:900px){
+  .gallery-prev,
+  .gallery-next{
+    display:none;
+  }
+}
 .lightbox{
   position:fixed;
   inset:0;
