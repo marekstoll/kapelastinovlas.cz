@@ -304,21 +304,34 @@ section{
 }
 
 .gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(200px,1fr));
-  gap:22px;
-  justify-content:center;
-  align-items:center;
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding:8px 0 18px;
+  -webkit-overflow-scrolling:touch;
+}
+
+.gallery-grid::-webkit-scrollbar{
+  height:8px;
 }
 
 .gallery-grid img{
-  width:100%;
-  height:250px;
+  flex:0 0 260px;
+  width:260px;
+  height:190px;
   object-fit:cover;
-  object-position:center;
   border:2px solid #333;
   background:#000;
   display:block;
+  cursor:pointer;
+  scroll-snap-align:center;
+  transition:transform .2s ease;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.03);
 }
 
 footer{
