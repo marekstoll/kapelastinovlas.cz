@@ -998,11 +998,27 @@ const galleryPrev = document.querySelector('.gallery-prev');
 const galleryNext = document.querySelector('.gallery-next');
 
 function scrollGallery(direction){
-  const step = galleryImages[0].getBoundingClientRect().width + 18;
-  galleryGrid.scrollBy({
-    left: direction * step,
-    behavior:'smooth'
-  });
+  const gridRect = galleryGrid.getBoundingClientRect();
+  const current = galleryGrid.scrollLeft;
+
+  const positions = galleryImages.map(img =>
+    img.getBoundingClientRect().left - gridRect.left + current
+  );
+
+  let target;
+
+  if(direction > 0){
+    target = positions.find(pos => pos > current + 10);
+  }else{
+    target = [...positions].reverse().find(pos => pos < current - 10);
+  }
+
+  if(target !== undefined){
+    galleryGrid.scrollTo({
+      left:target,
+      behavior:'smooth'
+    });
+  }
 }
 
 galleryPrev.addEventListener('click', () => scrollGallery(-1));
