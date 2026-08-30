@@ -80,6 +80,8 @@ nav a:hover{color:#d40000}
 /* ÚVOD */
 .hero{
   min-height:auto;
+  position:relative;
+  overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -89,9 +91,22 @@ nav a:hover{color:#d40000}
   text-align:center;
 }
 
+.hero-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:brightness(80%);
+  z-index:0;
+}
+
 .hero-inner{
   width:100%;
   max-width:none;
+  position:relative;
+  z-index:2;
 }
 
 .hero-logo{
@@ -588,6 +603,9 @@ footer a:hover{color:#d40000}
 </header>
 
 <main id="uvod" class="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+  <source src="images/Video_na_Web_Stinovlas_24MB.mp4" type="video/mp4">
+</video>
   <div class="hero-inner">
 
     <img class="hero-logo" src="images/St%C3%ADnovlas%20OFICIAL.png" alt="STÍNOVLAS">
