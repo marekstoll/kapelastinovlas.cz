@@ -336,7 +336,73 @@ section{
 .gallery-grid img:hover{
   transform:scale(1.025);
 }
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:10000;
+  background:rgba(0,0,0,.94);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+}
 
+.lightbox.is-open{
+  display:flex;
+}
+
+.lightbox-image{
+  max-width:90vw;
+  max-height:90vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next{
+  position:absolute;
+  border:0;
+  background:rgba(0,0,0,.55);
+  color:#fff;
+  cursor:pointer;
+  z-index:2;
+}
+
+.lightbox-close{
+  top:20px;
+  right:25px;
+  font-size:48px;
+  width:60px;
+  height:60px;
+}
+
+.lightbox-prev,
+.lightbox-next{
+  top:50%;
+  transform:translateY(-50%);
+  font-size:50px;
+  width:65px;
+  height:80px;
+}
+
+.lightbox-prev{left:20px;}
+.lightbox-next{right:20px;}
+
+@media(max-width:900px){
+  .lightbox{
+    padding:15px;
+  }
+
+  .lightbox-image{
+    max-width:96vw;
+    max-height:85vh;
+  }
+
+  .lightbox-prev{left:5px;}
+  .lightbox-next{right:5px;}
+}
 footer{
   border-top:1px solid #222;
   max-width:1180px;
