@@ -913,17 +913,17 @@ nav{
  <div class="gallery-carousel">
 <button class="gallery-prev" type="button">&#10094;</button>
 <div class="gallery-grid">
-    <img src="images/stinovlas duo.jpg" style="object-position:center 60%;" alt="">
-  <img src="images/DSC06266.JPG" style="object-position:center center;" alt="">
-  <img src="images/stinovlas tri.JPG" style="object-position:center center;" alt="">
-  <img src="images/tinovlas jedna.png" style="object-position:center 35%;" alt="">
-  <img src="images/DSC06306.JPG" style="object-position:center center;" alt="">
-  <img src="images/IMG_5065.JPG" style="object-position:center 35%;" alt="">
-  <img src="images/svatstinovlas siroky dva.jpg" style="object-position:35% center;" alt="">
-  <img src="images/IMG_7737.JPG" style="object-position:center 60%;" alt="">
-    <img src="images/DSC06247.JPG" style="object-position:center center;" alt="">
-<img src="images/stinovlas ja 2.jpg" style="object-position:center 35%;" alt="">
-  <img src="images/DSC06308.JPG" style="object-position:center center;" alt="">
+       <img src="images/stinovlas duo.jpg" style="object-position:center 60%;" alt="Dva členové kapely STÍNOVLAS">
+    <img src="images/DSC06266.JPG" style="object-position:center center;" alt="STÍNOVLAS při koncertě">
+    <img src="images/stinovlas tri.JPG" style="object-position:center center;" alt="Členové české rockové kapely STÍNOVLAS">
+    <img src="images/tinovlas jedna.png" style="object-position:center 35%;" alt="Portrét člena kapely STÍNOVLAS">
+    <img src="images/DSC06306.JPG" style="object-position:center center;" alt="Živé vystoupení kapely STÍNOVLAS">
+    <img src="images/IMG_5065.JPG" style="object-position:center 35%;" alt="Hudebník kapely STÍNOVLAS">
+    <img src="images/svatstinovlas siroky dva.jpg" style="object-position:35% center;" alt="Společná fotografie kapely STÍNOVLAS">
+    <img src="images/IMG_7737.JPG" style="object-position:center 60%;" alt="STÍNOVLAS na pódiu">
+    <img src="images/DSC06247.JPG" style="object-position:center center;" alt="Koncert kapely STÍNOVLAS">
+    <img src="images/stinovlas ja 2.jpg" style="object-position:center 35%;" alt="Zpěvák a kytarista kapely STÍNOVLAS">
+    <img src="images/DSC06308.JPG" style="object-position:center center;" alt="Rocková kapela STÍNOVLAS naživo">
   </div>
 <button class="gallery-next" type="button">&#10095;</button>
 </div>
@@ -968,10 +968,10 @@ nav{
   </div>
 
   <div>
-    <h3>Sleduj nás</h3>
-    <a href="#">Facebook</a>
-    <a href="#">Instagram</a>
-    <a href="https://www.youtube.com/@Kapela_Stinovlas" target="_blank">YouTube</a>
+       <h3>Sleduj nás</h3>
+    <a href="https://www.facebook.com/profile.php?id=61590322396879" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.instagram.com/kapela_stinovlas/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.youtube.com/@Kapela_Stinovlas" target="_blank" rel="noopener">YouTube</a>
     <a href="#">Spotify</a>
   </div>
 
@@ -1143,13 +1143,34 @@ document.addEventListener('keydown', (e) => {
   const analyticsCookies = document.getElementById('analyticsCookies');
   const marketingCookies = document.getElementById('marketingCookies');
 
-  function saveCookieConsent(settings){
+   function saveCookieConsent(settings){
     localStorage.setItem(COOKIE_KEY, JSON.stringify(settings));
     cookieOverlay.classList.remove('is-visible');
+
+    if(settings.analytics){
+      loadGoogleAnalytics();
+    }
 
     if(settings.marketing){
       loadMetaPixel();
     }
+  }
+
+  function loadGoogleAnalytics(){
+    if(window.gtag) return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){
+      window.dataLayer.push(arguments);
+    };
+
+    gtag('js', new Date());
+    gtag('config', 'G-297X25J55X', { anonymize_ip: true });
+
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-297X25J55X';
+    document.head.appendChild(gaScript);
   }
 
   function loadMetaPixel(){
@@ -1176,7 +1197,11 @@ document.addEventListener('keydown', (e) => {
       return;
     }
 
-    const consent = JSON.parse(savedConsent);
+       const consent = JSON.parse(savedConsent);
+
+    if(consent.analytics){
+      loadGoogleAnalytics();
+    }
 
     if(consent.marketing){
       loadMetaPixel();
