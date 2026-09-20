@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ochrana soukromí a cookies | STÍNOVLAS</title>
+  <meta name="description" content="Informace o zpracování osobních údajů a používání cookies na webu kapely STÍNOVLAS.">
+  <link rel="canonical" href="https://kapelastinovlas.cz/ochrana-soukromi-STINOVLAS.html">
+  <style>
+    :root{
+      color-scheme:dark;
+      --bg:#030303;
+      --panel:#0b0b0b;
+      --text:#f5f5f5;
+      --muted:#bdbdbd;
+      --line:rgba(255,255,255,.14);
+      --red:#d40000;
+      --red-dark:#720000;
+      --max:980px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      min-height:100vh;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 12% 12%,rgba(150,0,0,.28),transparent 34rem),
+        radial-gradient(circle at 90% 70%,rgba(90,0,0,.16),transparent 28rem),
+        var(--bg);
+      font-family:Arial,Helvetica,sans-serif;
+      line-height:1.65;
+    }
+
+    a{color:#ff4a4a}
+    a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:4px}
+
+    .page{
+      width:min(var(--max),calc(100% - 32px));
+      margin:auto;
+      padding:32px 0 72px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      margin-bottom:34px;
+    }
+
+    .logo{
+      display:block;
+      width:min(300px,64vw);
+      max-height:135px;
+      object-fit:contain;
+    }
+
+    .back,.cookie-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:12px 20px;
+      border:1px solid var(--line);
+      color:var(--text);
+      background:#111;
+      font:inherit;
+      font-weight:800;
+      text-decoration:none;
+      cursor:pointer;
+    }
+
+    .back:hover{border-color:var(--red)}
+
+    .cookie-button{
+      border-color:var(--red);
+      background:linear-gradient(135deg,var(--red-dark),var(--red));
+      box-shadow:0 12px 32px rgba(212,0,0,.24);
+    }
+
+    main{
+      padding:clamp(24px,5vw,56px);
+      border:1px solid var(--line);
+      background:rgba(11,11,11,.96);
+      box-shadow:0 25px 80px rgba(0,0,0,.55);
+    }
+
+    h1,h2{
+      font-family:Impact,"Arial Narrow",Arial,sans-serif;
+      font-weight:400;
+      text-transform:uppercase;
+      line-height:1.08;
+      letter-spacing:.02em;
+    }
+
+    h1{
+      max-width:850px;
+      margin:0 0 16px;
+      font-size:clamp(38px,7vw,72px);
+    }
+
+    h1 span{color:var(--red)}
+    h2{margin:46px 0 12px;font-size:clamp(27px,4vw,38px)}
+    h3{margin:28px 0 8px;font-size:20px}
+    p,li{color:var(--muted)}
+    strong{color:var(--text)}
+
+    .lead{max-width:790px;margin:0 0 10px;font-size:18px}
+    .updated{margin:0;color:#858585;font-size:14px}
+
+    .notice{
+      margin:28px 0;
+      padding:18px 20px;
+      border-left:5px solid var(--red);
+      background:#151515;
+    }
+
+    .notice p{margin:0}
+    ul{padding-left:22px}
+
+    .table-wrap{
+      overflow-x:auto;
+      margin-top:18px;
+      border:1px solid var(--line);
+    }
+
+    table{width:100%;min-width:720px;border-collapse:collapse}
+
+    th,td{
+      padding:14px 16px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
+    }
+
+    th{color:#fff;background:linear-gradient(135deg,var(--red-dark),#b00000)}
+    tr:last-child td{border-bottom:0}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+    footer{
+      padding:28px 0 0;
+      color:#858585;
+      text-align:center;
+      font-size:14px;
+    }
+
+    @media(max-width:620px){
+      .topbar{align-items:flex-start;flex-direction:column}
+      .back{width:100%}
+      .actions>*{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a href="index.html" aria-label="Zpět na web STÍNOVLAS">
+        <img class="logo" src="images/St%C3%ADnovlas%20OFICIAL%20transparent.png" alt="STÍNOVLAS">
+      </a>
+      <a class="back" href="index.html">Zpět na hlavní stránku</a>
+    </header>
+
+    <main>
+      <h1>Ochrana soukromí <span>a cookies</span></h1>
+      <p class="lead">Přehled informací o tom, jak web kapely STÍNOVLAS pracuje s osobními údaji, místním úložištěm, analytickými a marketingovými cookies.</p>
+      <p class="updated">Platné od 20. 9. 2026</p>
+
+      <h2>1. Kdo je správcem údajů</h2>
+      <p>
+        Správcem osobních údajů je <strong>Marek Štolle, IČO 08373043</strong>.<br>
+        Kontakt pro otázky a uplatnění práv: <a href="mailto:info@kapelastinovlas.cz">info@kapelastinovlas.cz</a>.
+      </p>
+
+      <h2>2. Jaké údaje a proč zpracováváme</h2>
+
+      <h3>Provoz a zabezpečení webu</h3>
+      <p>Poskytovatel hostingu může v technických protokolech zpracovat zejména IP adresu, datum a čas požadavku, navštívenou adresu a údaje o prohlížeči a zařízení. Účelem je bezpečný a spolehlivý provoz webu, prevence zneužití a řešení chyb. Právním základem je oprávněný zájem správce na zabezpečení webu. Údaje jsou uchovávány pouze po dobu nezbytnou podle nastavení poskytovatele hostingu.</p>
+
+      <h3>Booking a další komunikace</h3>
+      <p>Pokud nás kontaktujete e-mailem nebo telefonicky, zpracujeme údaje, které nám sami sdělíte, zejména jméno, kontaktní údaje a obsah komunikace. Účelem je odpověď na dotaz, příprava nabídky, sjednání vystoupení nebo vyřízení požadavku. Právním základem je jednání před uzavřením smlouvy, plnění smlouvy nebo oprávněný zájem na vyřízení komunikace. Údaje uchováváme po dobu řešení požadavku a následně jen po dobu potřebnou k ochraně právních nároků nebo splnění zákonných povinností.</p>
+
+      <h3>Měření návštěvnosti</h3>
+      <p>Po vašem souhlasu používáme Google Analytics 4, identifikátor měření <strong>G-297X25J55X</strong>. Služba může zpracovat online identifikátory, údaje o zařízení a prohlížeči, navštívené stránky, přibližnou polohu odvozenou z IP adresy a informace o používání webu. Do Analytics záměrně neposíláme jméno, e-mail ani telefon. Účelem je souhrnné měření návštěvnosti a zlepšování webu; právním základem je souhlas podle čl. 6 odst. 1 písm. a) GDPR. Uživatelská a událostní data jsou v GA4 uchovávána podle nastavení správce nejdéle 14 měsíců; souhrnné přehledy mohou zůstat dostupné déle.</p>
+
+      <h3>Marketing a měření reklam</h3>
+      <p>Po vašem souhlasu používáme Meta Pixel, identifikátor <strong>1675674120643874</strong>. Meta Pixel může zpracovat IP adresu, údaje o zařízení a prohlížeči, navštívenou stránku, čas návštěvy a online identifikátory. Účelem je měření reklam a vytváření publik pro retargeting na platformách Facebook a Instagram; právním základem je váš souhlas podle čl. 6 odst. 1 písm. a) GDPR.</p>
+
+      <div class="notice"><p><strong>Google Analytics ani Meta Pixel se nespustí bez příslušného souhlasu.</strong> Odmítnutí nemá vliv na používání webu.</p></div>
+
+      <h2>3. Cookies a místní úložiště</h2>
+      <p>Technické místní úložiště potřebné k zapamatování vaší volby používáme bez souhlasu. Analytické a marketingové cookies ukládáme až po souhlasu. Volbu můžete kdykoli změnit nebo odvolat.</p>
+
+      <div class="table-wrap" role="region" aria-label="Přehled používaného úložiště" tabindex="0">
+        <table>
+          <thead><tr><th>Název</th><th>Poskytovatel</th><th>Účel</th><th>Doba</th></tr></thead>
+          <tbody>
+            <tr><td><code>stinovlas_cookie_consent</code></td><td>STÍNOVLAS</td><td>Zapamatování zvolené úrovně souhlasu.</td><td>Do změny volby nebo vymazání úložiště prohlížeče.</td></tr>
+            <tr><td><code>_ga</code></td><td>Google Analytics</td><td>Rozlišení návštěvníků pro statistiku.</td><td>Standardně až 2 roky.</td></tr>
+            <tr><td><code>_ga_297X25J55X</code></td><td>Google Analytics</td><td>Uchování stavu relace pro statistiku.</td><td>Standardně až 2 roky.</td></tr>
+            <tr><td><code>_fbp</code></td><td>Meta Pixel</td><td>Měření reklam a retargeting.</td><td>Obvykle až 3 měsíce.</td></tr>
+            <tr><td><code>_fbc</code></td><td>Meta Pixel</td><td>Přiřazení návštěvy k reklamě po příchodu z Facebooku nebo Instagramu.</td><td>Obvykle až 3 měsíce.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Volbu lze kdykoli změnit tlačítkem <strong>Nastavení cookies</strong> na hlavní stránce. Následující tlačítko odstraní uloženou volbu i dostupné analytické a marketingové cookies a otevře hlavní stránku, kde ji nastavíte znovu:</p>
+      <div class="actions"><button class="cookie-button" id="resetCookieConsent" type="button">Změnit nastavení cookies</button></div>
+
+      <h2>4. Příjemci a předání mimo EHP</h2>
+      <p>V nezbytném rozsahu mohou údaje zpracovat poskytovatel hostingu a technických služeb. U analytiky je příjemcem <strong>Google Ireland Limited</strong>; u marketingového měření <strong>Meta Platforms Ireland Limited</strong>. Tyto společnosti mohou data zpracovávat také mimo Evropský hospodářský prostor. Uvádějí, že pro předání používají zejména rozhodnutí o odpovídající ochraně, rámec EU–USA Data Privacy Framework a standardní smluvní doložky.</p>
+      <p><a href="https://policies.google.com/privacy?hl=cs" target="_blank" rel="noopener noreferrer">Soukromí Google</a> · <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Soukromí Meta</a></p>
+
+      <h2>5. Externí obsah a odkazy</h2>
+      <p>Web používá písma Google Fonts a obsahuje vložený přehrávač YouTube. Při načítání těchto prvků může společnost Google obdržet technické údaje, zejména IP adresu a informace o zařízení. Kliknutím na odkazy na Facebook, Instagram, YouTube, Spotify nebo jiné externí weby přecházíte ke službě třetí strany, která údaje zpracovává podle vlastních pravidel.</p>
+
+      <h2>6. Jaká máte práva</h2>
+      <p>Podle okolností máte právo požadovat přístup k údajům, jejich opravu nebo výmaz, omezení zpracování, přenositelnost údajů a vznést námitku proti zpracování založenému na oprávněném zájmu. Souhlas můžete kdykoli odvolat; odvolání nemá vliv na zákonnost předchozího zpracování.</p>
+      <p>Žádost pošlete na <a href="mailto:info@kapelastinovlas.cz">info@kapelastinovlas.cz</a>. Máte také právo podat stížnost u <a href="https://uoou.gov.cz/" target="_blank" rel="noopener noreferrer">Úřadu pro ochranu osobních údajů</a>.</p>
+
+      <h2>7. Povinnost poskytnout údaje a automatizované rozhodování</h2>
+      <p>Poskytnutí údajů při kontaktování je dobrovolné; bez kontaktních údajů však nemusíme být schopni odpovědět. Na webu neprovádíme automatizované individuální rozhodování ani profilování s právními nebo obdobně významnými účinky.</p>
+
+      <h2>8. Změny zásad</h2>
+      <p>Zásady můžeme upravit při změně webu, používaných služeb nebo právních požadavků. Aktuální verze a datum účinnosti budou vždy uvedeny zde.</p>
+    </main>
+
+    <footer>© 2026 STÍNOVLAS</footer>
+  </div>
+
+  <script>
+    const consentKey = 'stinovlas_cookie_consent';
+
+    function removeCookie(name){
+      const rootDomain = location.hostname.replace(/^www\./, '');
+      document.cookie = `${name}=;Max-Age=0;path=/`;
+      document.cookie = `${name}=;Max-Age=0;path=/;domain=${location.hostname}`;
+      document.cookie = `${name}=;Max-Age=0;path=/;domain=.${rootDomain}`;
+    }
+
+    document.getElementById('resetCookieConsent').addEventListener('click', () => {
+      try{
+        localStorage.removeItem(consentKey);
+      }catch{}
+
+      document.cookie
+        .split(';')
+        .map(cookie => cookie.split('=')[0].trim())
+        .filter(name => name === '_ga' || name.startsWith('_ga_'))
+        .forEach(removeCookie);
+
+      ['_fbp', '_fbc'].forEach(removeCookie);
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
