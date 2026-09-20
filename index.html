@@ -732,7 +732,7 @@ nav{
 .cookie-actions{
   margin-top:34px;
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:18px;
   align-items:center;
 }
@@ -1024,7 +1024,7 @@ nav{
   </div>
 
   <div class="copy">
-    © 2026 STÍNOVLAS
+    © 2026 STÍNOVLAS · <a href="ochrana-soukromi-STINOVLAS.html" style="display:inline;color:#d40000;">Ochrana soukromí a cookies</a>
   </div>
 
 </footer>
@@ -1042,7 +1042,11 @@ nav{
         Takže tě naše hudba bude pronásledovat všude na internetu 😈
         (neboj, bude to nejspíš do chvíle, než tyhle sušenky potvrdíš zase jinde)...
       </p>
-
+<p style="margin:18px 0 0;">
+  <a href="ochrana-soukromi-STINOVLAS.html" style="color:#fff;font-weight:700;text-decoration:underline;">
+    Zásady ochrany soukromí a cookies
+  </a>
+</p>
       <div class="cookie-actions">
         <button class="cookie-detail-btn" type="button" id="cookieDetailsBtn">
           Detailnější nastavení cookies
@@ -1051,6 +1055,9 @@ nav{
         <button class="cookie-main-btn" type="button" id="cookieAcceptAll">
           Přijmout vše
         </button>
+        <button class="cookie-reject-btn" type="button" id="cookieReject">
+  Zakázat vše
+</button>
       </div>
 
       <div class="cookie-settings" id="cookieSettings">
@@ -1079,9 +1086,6 @@ nav{
         </div>
 
         <div class="cookie-bottom">
-          <button class="cookie-reject-btn" type="button" id="cookieReject">
-            Zakázat vše
-          </button>
 
           <button class="cookie-save-btn" type="button" id="cookieSave">
             Přijmout vybrané
@@ -1190,19 +1194,51 @@ document.addEventListener('keydown', (e) => {
   const cookieSave = document.getElementById('cookieSave');
   const analyticsCookies = document.getElementById('analyticsCookies');
   const marketingCookies = document.getElementById('marketingCookies');
+const cookieSettingsButton = document.createElement('button');
+cookieSettingsButton.type = 'button';
+cookieSettingsButton.textContent = 'Nastavení cookies';
+cookieSettingsButton.hidden = true;
+cookieSettingsButton.style.cssText = 'position:fixed;left:18px;bottom:18px;z-index:9998;padding:12px 16px;border:1px solid #555;background:#080808;color:#fff;font-weight:700;cursor:pointer;';
+document.body.appendChild(cookieSettingsButton);
+   function removeTrackingCookie(name){
+  const rootDomain = location.hostname.replace(/^www\./, '');
 
-   function saveCookieConsent(settings){
-    localStorage.setItem(COOKIE_KEY, JSON.stringify(settings));
-    cookieOverlay.classList.remove('is-visible');
+  document.cookie = `${name}=;Max-Age=0;path=/`;
+  document.cookie = `${name}=;Max-Age=0;path=/;domain=${location.hostname}`;
+  document.cookie = `${name}=;Max-Age=0;path=/;domain=.${rootDomain}`;
+}
 
-    if(settings.analytics){
-      loadGoogleAnalytics();
-    }
+function saveCookieConsent(settings){
+  localStorage.setItem(COOKIE_KEY, JSON.stringify(settings));
+  window['ga-disable-G-297X25J55X'] = !settings.analytics;
 
-    if(settings.marketing){
-      loadMetaPixel();
+  if(!settings.analytics){
+    document.cookie
+      .split(';')
+      .map(cookie => cookie.split('=')[0].trim())
+      .filter(name => name === '_ga' || name.startsWith('_ga_'))
+      .forEach(removeTrackingCookie);
+  }
+
+  if(!settings.marketing){
+    ['_fbp', '_fbc'].forEach(removeTrackingCookie);
+
+    if(typeof window.fbq === 'function'){
+      window.fbq('consent', 'revoke');
     }
   }
+
+  cookieOverlay.classList.remove('is-visible');
+  cookieSettingsButton.hidden = false;
+
+  if(settings.analytics){
+    loadGoogleAnalytics();
+  }
+
+  if(settings.marketing){
+    loadMetaPixel();
+  }
+}
 
   function loadGoogleAnalytics(){
     if(window.gtag) return;
@@ -1238,14 +1274,20 @@ document.addEventListener('keydown', (e) => {
 }
 
   document.addEventListener('DOMContentLoaded', () => {
-    const savedConsent = localStorage.getItem(COOKIE_KEY);
+  const savedConsent = localStorage.getItem(COOKIE_KEY);
 
-    if(!savedConsent){
-      cookieOverlay.classList.add('is-visible');
-      return;
-    }
+  if(!savedConsent){
+    cookieOverlay.classList.add('is-visible');
+    return;
+  }
 
-       const consent = JSON.parse(savedConsent);
+  try{
+    const consent = JSON.parse(savedConsent);
+
+    analyticsCookies.checked = Boolean(consent.analytics);
+    marketingCookies.checked = Boolean(consent.marketing);
+    cookieSettingsButton.hidden = false;
+    window['ga-disable-G-297X25J55X'] = !consent.analytics;
 
     if(consent.analytics){
       loadGoogleAnalytics();
@@ -1254,7 +1296,11 @@ document.addEventListener('keydown', (e) => {
     if(consent.marketing){
       loadMetaPixel();
     }
-  });
+  }catch{
+    localStorage.removeItem(COOKIE_KEY);
+    cookieOverlay.classList.add('is-visible');
+  }
+});
 
  cookieDetailsBtn.addEventListener('click', () => {
   cookieSettings.classList.toggle('is-open');
@@ -1296,6 +1342,21 @@ document.addEventListener('keydown', (e) => {
       marketing:marketingCookies.checked
     });
   });
+  cookieSettingsButton.addEventListener('click', () => {
+  const savedConsent = localStorage.getItem(COOKIE_KEY);
+
+  if(savedConsent){
+    try{
+      const consent = JSON.parse(savedConsent);
+      analyticsCookies.checked = Boolean(consent.analytics);
+      marketingCookies.checked = Boolean(consent.marketing);
+    }catch{}
+  }
+
+  cookieSettings.classList.add('is-open');
+  cookieOverlay.classList.add('is-visible');
+  cookieSettingsButton.hidden = true;
+});
 </script>
 
 </body>
