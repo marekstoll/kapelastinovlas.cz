@@ -1223,7 +1223,6 @@ function saveCookieConsent(settings){
   }
 
   cookieOverlay.classList.remove('is-visible');
-  cookieSettingsButton.hidden = false;
 
   if(settings.analytics){
     loadGoogleAnalytics();
@@ -1280,7 +1279,6 @@ function saveCookieConsent(settings){
 
     analyticsCookies.checked = Boolean(consent.analytics);
     marketingCookies.checked = Boolean(consent.marketing);
-    cookieSettingsButton.hidden = false;
     window['ga-disable-G-297X25J55X'] = !consent.analytics;
 
     if(consent.analytics){
