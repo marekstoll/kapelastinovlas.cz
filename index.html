@@ -1336,21 +1336,6 @@ function saveCookieConsent(settings){
       marketing:marketingCookies.checked
     });
   });
-  cookieSettingsButton.addEventListener('click', () => {
-  const savedConsent = localStorage.getItem(COOKIE_KEY);
-
-  if(savedConsent){
-    try{
-      const consent = JSON.parse(savedConsent);
-      analyticsCookies.checked = Boolean(consent.analytics);
-      marketingCookies.checked = Boolean(consent.marketing);
-    }catch{}
-  }
-
-  cookieSettings.classList.add('is-open');
-  cookieOverlay.classList.add('is-visible');
-  cookieSettingsButton.hidden = true;
-});
 </script>
 
 </body>
