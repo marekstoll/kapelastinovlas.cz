@@ -58,6 +58,21 @@ def main():
         if 'SIL OPEN FONT LICENSE' not in license_text: raise RuntimeError('Font license missing')
         (fonts/(family+'-OFL.txt')).write_text(license_text)
     (fonts/'fonts.css').write_text('\n\n'.join(local_css))
+    # Download the thumbnail during deployment, never from a visitor's browser.
+    thumbnail = None
+    for resolution in ['maxresdefault', 'hqdefault']:
+        try:
+            candidate = fetch(f'https://i.ytimg.com/vi/QqBvuIiqPLo/{resolution}.jpg')
+            if candidate[:3] != b'\xff\xd8\xff' or len(candidate) < 5000:
+                raise RuntimeError('Invalid or placeholder YouTube thumbnail')
+            thumbnail = candidate
+            break
+        except Exception as error:
+            print(f'YouTube {resolution}: {error}')
+    if thumbnail is None:
+        raise RuntimeError('Could not retrieve the video thumbnail; current live site is unchanged.')
+    (OUT/'images/youtube-preview.jpg').write_bytes(thumbnail)
+    html = html.replace('src="images/youtube-preview.webp"', 'src="images/youtube-preview.jpg"')
     (OUT/'index.html').write_text(re.sub(pattern,'<link rel="stylesheet" href="fonts/fonts.css">',html))
     if 'fonts.googleapis.com' in (OUT/'index.html').read_text(): raise RuntimeError('External font link remains')
     print(f'Pages ready: {len(downloaded)} local WOFF2 files; Latin + Latin Extended, including Czech; three OFL licenses.')
