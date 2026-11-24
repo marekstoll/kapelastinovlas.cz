@@ -93,8 +93,19 @@ nav a:hover{color:#d40000}
   height:100%;
   object-fit:cover;
   object-position:center;
-  filter:brightness(80%);
+  filter:brightness(64%);
   z-index:0;
+}
+
+/* Vignette affects the background, leaving the logo and text crisp. */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:radial-gradient(ellipse at center,transparent 30%,rgba(0,0,0,.20) 62%,rgba(0,0,0,.75) 100%);
+  box-shadow:inset 0 0 80px 12px rgba(0,0,0,.25);
 }
 
 .hero-inner{
@@ -295,10 +306,11 @@ section{
 }
 
 .gallery-grid{
+  position:relative;
   display:flex;
   gap:18px;
   overflow-x:auto;
-  scroll-snap-type:x proximity;
+  scroll-snap-type:none;
   scroll-behavior:smooth;
   padding:10px 2px 22px;
   -webkit-overflow-scrolling:touch;
@@ -356,9 +368,13 @@ section{
 }
 
 @media(max-width:900px){
-  .gallery-prev,
-  .gallery-next{
-    display:none;
+  .gallery-carousel{gap:5px;}
+  .gallery-prev,.gallery-next{
+    display:block;
+    flex-basis:32px;
+    width:32px;
+    height:54px;
+    font-size:26px;
   }
 }
 .lightbox{
@@ -758,4 +774,31 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .footer-socials img[src$="/fb.png"]{
   width:22px;
   height:22px;
+}
+
+/* Jednorázové odhalení obsahu při posouvání. Bez JavaScriptu je vše viditelné. */
+.reveal-pending{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.65,.3,1)}
+.reveal-pending.is-revealed{opacity:1;transform:none}
+.content-block,.gallery-section,footer{scroll-margin-top:90px}
+.concert-past .date,.concert-past .concert-name{color:#b5b5b5;text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:#929292}
+.concert-status{display:block;color:#b5b5b5;font-size:14px;line-height:1.5}
+.concert-past a{color:#ccc}
+.concert-past a:hover{color:#fff;text-decoration:underline}
+.gallery-controls{display:flex;justify-content:flex-end;margin-top:8px}
+.gallery-autoplay{border:1px solid #444;border-radius:5px;padding:8px 12px;background:#0b0b0b;color:#ccc;font:inherit;font-size:14px;cursor:pointer}
+.gallery-autoplay:hover{border-color:#d40000;color:#fff}
+.billing-details{margin-top:20px}
+.billing-details p{font-size:16px;line-height:1.6}
+.billing-details strong{color:#eee;font-weight:700}
+.consumer-info{max-width:800px;margin:18px auto 0;text-align:left}
+.consumer-info summary{cursor:pointer;color:#ccc;text-align:center;font-size:16px;padding:8px}
+.consumer-info p{font-size:16px;line-height:1.6;margin:12px 0}
+.consumer-info a{display:inline;font:inherit;text-decoration:underline;color:#eee}
+.cookie-box{position:relative}
+.cookie-close{position:absolute;right:12px;top:8px;width:44px;height:44px;background:#111;border:1px solid #555;border-radius:4px;color:#fff;font-size:30px;cursor:pointer;z-index:1}
+.cookie-close:hover{background:#333}
+@media(prefers-reduced-motion:reduce){
+  .reveal-pending,.reveal-pending.is-revealed{opacity:1;transform:none;transition:none}
+  .gallery-grid{scroll-behavior:auto}
+  .gallery-grid img{transition:none}
 }

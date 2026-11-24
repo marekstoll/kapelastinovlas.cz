@@ -103,6 +103,8 @@
     apply(settings);
     close();
   }
+  document.getElementById('cookieClose').addEventListener('click', close);
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
   document.getElementById('cookieOpen').addEventListener('click', () => open(true));
   document.getElementById('cookieDetailsBtn').addEventListener('click', () => {
     details.classList.toggle('is-open');
@@ -112,7 +114,7 @@
   document.getElementById('cookieReject').addEventListener('click', () => save({analytics:false, marketing:false}));
   document.getElementById('cookieSave').addEventListener('click', () => save({analytics:analytics.checked, marketing:marketing.checked}));
   overlay.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { e.preventDefault(); save(current); return; }
+    if (e.key === 'Escape') { e.preventDefault(); close(); return; }
     if (e.key !== 'Tab') return;
     const buttons = Array.from(overlay.querySelectorAll('button, input:not(:disabled), a')).filter(el => el.getClientRects().length);
     const first = buttons[0], last = buttons[buttons.length - 1];
